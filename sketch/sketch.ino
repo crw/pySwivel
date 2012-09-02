@@ -3,7 +3,6 @@
 
 char command;
 byte value;
-//char inByte0;         // incoming serial byte
 
 Servo pan; 
 Servo tilt;
@@ -25,46 +24,28 @@ void setup()
  
 void loop() 
 { 
-  int angle = 0;
   // if we get a valid byte, read analog ins:
   if (Serial.available() > 0) {
     // get incoming byte:
     serialRX();
-    angle = getAngle();
     if (command == 'p') {
-      pan.write(angle);
-      Serial.print("Set pan to ");
-      Serial.print(angle);
-      Serial.print("\n");
+      pan.write(value);
+      logAction("pan", value);
     } else if (command = 't') {
-      angle = getAngle();
-      tilt.write(angle);
-      Serial.print("Set tilt to ");
-      Serial.print(angle);
-      Serial.print("\n");
-    }    
+      tilt.write(value);
+      logAction("tilt", value);
+    }
   }
 }
 
 void serialRX() {
-  while (Serial.available() > numberOfBytes) {
+  if (Serial.available() > numberOfBytes) {
     if (Serial.read() == 0x00) { //send a 0 before your string as a start byte
       command = Serial.read();
-      //for (byte i=0; i<numberOfBytes-1; i++)
       value = Serial.read();
     }
-    Serial.print("Read Command: ");
-    Serial.print(command);
-    Serial.print("\n");
-    Serial.print("Read Value  : ");
-    Serial.print(value);
-    Serial.print("\n");
+    logCommandValue();
   }
-}
-
-int getAngle() {
-  return value;
-  //return atoi(value);
 }
 
 void establishContact() {
@@ -74,4 +55,19 @@ void establishContact() {
   }
 }
 
+void logCommandValue() {
+    Serial.print("Recv: Command: ");
+    Serial.print(command);
+    Serial.print(", ");
+    Serial.print("Value: ");
+    Serial.print(value);
+    Serial.print("\n");
+}
 
+void logAction(char* action, byte angle) {
+    Serial.print("Set ");
+    Serial.print(action);
+    Serial.print(" to ");
+    Serial.print(angle);
+    Serial.print("\n");
+}  
