@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.6.0/build/widget-base/assets/skins/sam/widget-base.css&3.6.0/build/slider-base/assets/skins/sam/slider-base.css">
+    <style>
+        .horiz_slider {
+            margin-left: 20px;
+        }
+    </style>
+    <!--<link rel="stylesheet" src="{{ data.bootstrap_css }}">-->
+</head>
+<body>
+<div id="demo" class="example yui3-skin-sam">
+
+    <div class="vert_slider"></div>
+    <span class="horiz_slider"></span>
+
+    <p>
+        <label for="vert_value">Tilt: </label>
+            <input id="vert_value" value="90">
+    </p>
+    <p>
+        <label for="horiz_value">Pan: </label>
+            <input id="horiz_value" value="90">
+        <span class="horiz_slider"></span>
+    </p>
+
+
+
+</div>
+</body>
+
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.6.0/build/yui-base/yui-base-min.js&3.6.0/build/attribute-core/attribute-core-min.js&3.6.0/build/oop/oop-min.js&3.6.0/build/event-custom-base/event-custom-base-min.js&3.6.0/build/event-custom-complex/event-custom-complex-min.js&3.6.0/build/attribute-events/attribute-events-min.js&3.6.0/build/attribute-extras/attribute-extras-min.js&3.6.0/build/attribute-base/attribute-base-min.js&3.6.0/build/attribute-complex/attribute-complex-min.js&3.6.0/build/base-core/base-core-min.js&3.6.0/build/base-base/base-base-min.js&3.6.0/build/pluginhost-base/pluginhost-base-min.js&3.6.0/build/pluginhost-config/pluginhost-config-min.js&3.6.0/build/base-pluginhost/base-pluginhost-min.js&3.6.0/build/classnamemanager/classnamemanager-min.js&3.6.0/build/features/features-min.js&3.6.0/build/dom-core/dom-core-min.js&3.6.0/build/dom-base/dom-base-min.js&3.6.0/build/selector-native/selector-native-min.js&3.6.0/build/selector/selector-min.js&3.6.0/build/node-core/node-core-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.6.0/build/node-base/node-base-min.js&3.6.0/build/event-base/event-base-min.js&3.6.0/build/event-synthetic/event-synthetic-min.js&3.6.0/build/event-focus/event-focus-min.js&3.6.0/build/dom-style/dom-style-min.js&3.6.0/build/node-style/node-style-min.js&3.6.0/build/widget-base/widget-base-min.js&3.6.0/build/widget-htmlparser/widget-htmlparser-min.js&3.6.0/build/widget-skin/widget-skin-min.js&3.6.0/build/event-delegate/event-delegate-min.js&3.6.0/build/node-event-delegate/node-event-delegate-min.js&3.6.0/build/widget-uievents/widget-uievents-min.js&3.6.0/build/node-pluginhost/node-pluginhost-min.js&3.6.0/build/dom-screen/dom-screen-min.js&3.6.0/build/node-screen/node-screen-min.js&3.6.0/build/base-build/base-build-min.js&3.6.0/build/yui-throttle/yui-throttle-min.js&3.6.0/build/dd-ddm-base/dd-ddm-base-min.js&3.6.0/build/dd-drag/dd-drag-min.js&3.6.0/build/dd-constrain/dd-constrain-min.js&3.6.0/build/substitute/substitute-min.js&3.6.0/build/event-key/event-key-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.6.0/build/slider-base/slider-base-min.js&3.6.0/build/slider-value-range/slider-value-range-min.js"></script>
+<script src="{{ data.pantilt_js }}"></script>
+
+<!--
+<script src="{{ data.jquery_js }}"></script>
+<script src="{{ data.bootstrap_js }}"></script>
+-->
+</html>
