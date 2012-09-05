@@ -15,7 +15,7 @@ class CommandError(Exception):
 
 class PanTiltSwivel:
 
-    __RXTX_SLEEP_TIME = 0.05
+    __RXTX_SLEEP_TIME = 0.05 # milliseconds
     __COMMAND_LENGTH_BYTES = 2
     __SERVO_MIN_TRAVEL = 0
     __SERVO_MAX_TRAVEL = 179
@@ -24,15 +24,16 @@ class PanTiltSwivel:
     __CMD_TILT = 't'
 
 
+    @classmethod
+    def get_default_serial_port(cls):
+        return glob.glob('/dev/tty.usbmodem*')[0]
+
+
     def __init__(self, serial_port = None):
         """serial is a valid serial port"""
         if serial_port is None:
             serial_port = PanTiltSwivel.get_default_serial_port()
         self.serial = serial.Serial(serial_port, 9600)
-
-    @classmethod
-    def get_default_serial_port(cls):
-        return glob.glob('/dev/tty.usbmodem*')[0]
 
 
     def set_timeout(self, sleep_ms):
